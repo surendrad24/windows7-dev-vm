@@ -1,6 +1,6 @@
 # Windows 7 Dev VM — 7 C++ compilers, one `docker compose up`
 
-A reproducible, Dockerized Windows 7 Ultimate x64 SP1 virtual machine pre-configured with seven C/C++ compilers for educational and legacy-compatibility development work. Built on top of [`dockur/windows`](https://github.com/dockur/windows).
+A reproducible, Dockerized Windows 7 Ultimate x64 SP1 virtual machine pre-configured with seven C/C++ compilers for educational and legacy-compatibility development work. Built on top of [`surendrad24/windows`](https://github.com/surendrad24/windows).
 
 ## What's inside
 
@@ -50,9 +50,9 @@ Edit `docker-compose.yml` to change:
 
 ## How it works
 
-1. `dockur/windows` downloads the Windows 7 Ultimate ISO from Microsoft on first run.
+1. `surendrad24/windows` downloads the Windows 7 Ultimate ISO from Microsoft on first run.
 2. The autounattend process installs Windows silently.
-3. Our `oem/install.bat` is auto-invoked on first login (dockur convention).
+3. Our `oem/install.bat` is auto-invoked on first login (OEM convention).
 4. The orchestrator runs stages 01–10 in order, with reboots in between:
    - Enable TLS 1.2 in WinInet, install modern root CAs
    - SP1 → Convenience Rollup → servicing stack
@@ -60,13 +60,13 @@ Edit `docker-compose.yml` to change:
    - Per-compiler installers (downloaded from GitHub Releases)
 5. On completion, a desktop shortcut `All compilers installed` is created.
 
-Large installers (SP1 904 MB, VS 2019 layout 2 GB, etc.) are hosted on this repo's [GitHub Releases](https://github.com/surendrad24/windows7-dev-vm/releases) and fetched by the guest during provisioning. The Docker image itself stays small (~200 MB on top of `dockur/windows`).
+Large installers (SP1 904 MB, VS 2019 layout 2 GB, etc.) are hosted on this repo's [GitHub Releases](https://github.com/surendrad24/windows7-dev-vm/releases) and fetched by the guest during provisioning. The Docker image itself stays small (~200 MB on top of `surendrad24/windows`).
 
 ## Project layout
 
 ```
 .
-├── Dockerfile              # Extends dockur/windows:latest, copies oem/
+├── Dockerfile              # Extends surendrad24/windows:latest, copies oem/
 ├── docker-compose.yml      # One-click entrypoint
 ├── oem/                    # Auto-copied to C:\OEM\ on guest
 │   ├── install.bat         # Orchestrator (resumes across reboots)
@@ -93,7 +93,7 @@ MIT licensed. See [LICENSE](LICENSE).
 
 ## Credits
 
-- [`dockur/windows`](https://github.com/dockur/windows) — the amazing base image that makes any of this possible
+- [`surendrad24/windows`](https://github.com/surendrad24/windows) — the amazing base image that makes any of this possible
 - Microsoft for Windows 7 and Visual Studio Community
 - Embarcadero/CodeGear/Borland for Dev-C++, Turbo C++, BCC
 - The Code::Blocks, TDM-GCC, and Visual Studio Code teams

@@ -1,6 +1,6 @@
 @echo off
 REM Stage 02: Windows 7 SP1 (KB976932, 904 MB)
-REM Skip if already SP1 (dockur may ship SP1 slipstreamed)
+REM Skip if already SP1 (base image may ship SP1 slipstreamed)
 
 for /f "tokens=4" %%v in ('ver') do set WINVER=%%v
 echo Windows version string: %WINVER%

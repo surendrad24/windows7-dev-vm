@@ -1,7 +1,7 @@
 # Credits and references
 
 ## Base platform
-- **[dockur/windows](https://github.com/dockur/windows)** — the fantastic project that makes running Windows in Docker practical. This project is a thin layer on top.
+- **[surendrad24/windows](https://github.com/surendrad24/windows)** — our Docker-in-Windows base image. This project is a thin layer on top.
 
 ## Compiler vendors
 - **Microsoft** — Windows 7, Visual Studio Community 2019, Visual Studio Code, .NET Framework
@@ -13,10 +13,10 @@
 - Microsoft KB articles for SP1 (KB976932), Convenience Rollup (KB3125574), SHA-2 code signing (KB4474419), SSU (KB4490628, KB3020369)
 - Microsoft TLS 1.2 configuration guide: https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client
 - Visual Studio 2019 offline layout: https://docs.microsoft.com/en-us/visualstudio/install/create-an-offline-installation-of-visual-studio
-- dockur/windows OEM customization: https://github.com/dockur/windows#how-do-i-run-a-script
+- OEM provisioning convention: https://github.com/surendrad24/windows#oem-provisioning
 
 ## Build and test infrastructure
-- The provisioning scripts were developed and tested on an Ubuntu 26.04 host running `dockur/windows`.
+- The provisioning scripts were developed and tested on an Ubuntu 26.04 host running `surendrad24/windows`.
 - VS 2019 offline layout was built on a Windows 10 host using `vs_community.exe --layout`.
 - All asset uploads via `gh` CLI; container builds via Docker Buildx.
 

@@ -1,7 +1,7 @@
 @echo off
 REM =============================================================
 REM Windows 7 Dev VM - provisioning orchestrator
-REM Runs on first login via dockur/windows OEM convention.
+REM Runs on first login via surendrad24/windows OEM convention.
 REM Resumes across reboots using C:\provision\state.txt
 REM =============================================================
 
