@@ -17,14 +17,16 @@ call C:\OEM\scripts\fetch.cmd vjredist.exe "%INST%\vjredist.exe"
 call C:\OEM\scripts\fetch.cmd msxml4-sp2.msi "%INST%\msxml4.msi"
 call C:\OEM\scripts\fetch.cmd turbo2006.zip "%INST%\turbo2006.zip"
 
-REM VS 2019 offline layout (split)
+REM VS 2019 offline layout (split into 3 parts of ~1 GB each)
 call C:\OEM\scripts\fetch.cmd vs2019.zip.part00 "%INST%\vs2019.zip.part00"
 call C:\OEM\scripts\fetch.cmd vs2019.zip.part01 "%INST%\vs2019.zip.part01"
 call C:\OEM\scripts\fetch.cmd vs2019.zip.part02 "%INST%\vs2019.zip.part02"
 
 echo Reassembling vs2019.zip from parts...
 copy /b "%INST%\vs2019.zip.part00" + "%INST%\vs2019.zip.part01" + "%INST%\vs2019.zip.part02" "%INST%\vs2019.zip"
-del "%INST%\vs2019.zip.part0?"
+del "%INST%\vs2019.zip.part00"
+del "%INST%\vs2019.zip.part01"
+del "%INST%\vs2019.zip.part02"
 
 echo Fetch stage complete.
 exit /b 0
