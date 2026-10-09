@@ -1,0 +1,11 @@
+storage/
+*.iso
+*.vhdx
+*.qcow2
+*.img
+oem/installers/*
+!oem/installers/.gitkeep
+.env
+*.log
+.vscode/
+.idea/

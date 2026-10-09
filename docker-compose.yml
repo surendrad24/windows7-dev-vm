@@ -1,0 +1,36 @@
+services:
+  windows7-dev-vm:
+    image: surendrad24/windows7-dev-vm:latest
+    container_name: windows7-dev-vm
+    environment:
+      VERSION: "win7ultimate"
+      RAM_SIZE: "4G"
+      CPU_CORES: "4"
+      DISK_SIZE: "64G"
+      USERNAME: "Developer"
+      PASSWORD: "Developer"
+      LANGUAGE: "English"
+      REGION: "en-US"
+      KEYBOARD: "en-US"
+      # Skip heavy compilers by setting these to "false"
+      INSTALL_CODEBLOCKS: "true"
+      INSTALL_DEVCPP: "true"
+      INSTALL_TDMGCC: "true"
+      INSTALL_BORLAND: "true"
+      INSTALL_TURBO: "true"
+      INSTALL_VSCODE: "true"
+      INSTALL_VS2019: "true"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "8006:8006"     # Web console (noVNC)
+      - "3389:3389/tcp" # RDP
+      - "3389:3389/udp"
+    volumes:
+      - ./storage:/storage
+      - ./shared:/data
+    restart: on-failure
+    stop_grace_period: 2m

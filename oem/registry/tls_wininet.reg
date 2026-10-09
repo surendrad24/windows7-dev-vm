@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; Enable TLS 1.1 + TLS 1.2 in WinInet (used by IE, VS Installer, PowerShell IWR)
+; SecureProtocols: 0x080 = TLS 1.1, 0x200 = TLS 1.2 → combined with existing SSL3 (0x20) + TLS 1.0 (0x80) = 0xa80
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SecureProtocols"=dword:00000a80
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SecureProtocols"=dword:00000a80
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SecureProtocols"=dword:00000a80
