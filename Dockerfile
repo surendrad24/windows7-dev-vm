@@ -1,4 +1,4 @@
-FROM dockur/windows:latest
+FROM dockurr/windows:latest
 
 LABEL org.opencontainers.image.title="Windows 7 Dev VM (7 C++ compilers)"
 LABEL org.opencontainers.image.description="One-click Windows 7 Ultimate x64 SP1 VM with Code::Blocks, Dev-C++, Borland BCC 5.5, TDM-GCC, Turbo C++ 2006, VS Code, and Visual Studio 2019 Community pre-configured."
